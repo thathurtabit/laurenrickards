@@ -1,0 +1,86 @@
+.posts-wrapper {
+	display: flex;
+	flex-direction: row;
+
+	article {
+		position: relative;
+		display: flex;
+		align-content: stretch;
+		margin-bottom: 30px;
+
+		@for $i from 1 through 50 {
+			&:nth-child(#{$i}) a {
+	  			background: hsla(random(365), 90, 50, 1);
+	  		}
+	  	}
+
+		// Everything is wrapped in here
+		a {
+			position: relative;
+			display: block;
+			width: 100%;
+		}
+
+		header {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			display: flex;
+			align-items: center;
+		}
+
+		h2 {
+			transition: all 0.25s ease-in-out;
+			transform: translateY(2px);
+			text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+			opacity: 0;
+			font-size: 1.5rem;
+			color: $white;
+			align-content: center;
+			text-align: center;
+			padding-left: 2rem;
+			padding-right: 2rem;
+			z-index: 1;
+			width: 100%;
+		}
+
+
+		img {
+			@extend .img-fluid;
+			transition: all 0.25s ease-in-out;
+			opacity: 1;
+		}
+
+
+		// HOVER
+		a:hover {
+			h2 {
+				opacity: 1;
+				transform: translateY(0);
+			}
+
+			img {
+				opacity: 0.1;
+			}
+		}
+	}
+}
+
+.single-post-text {
+	order: 1;
+
+	@include media-breakpoint-up(md) {
+		order: 2;
+	}
+}
+
+.size-single-page-img {
+	@extend .img-fluid;
+}
+
+
+.comments {
+	max-width: 50rem;
+}

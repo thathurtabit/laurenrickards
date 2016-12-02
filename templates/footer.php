@@ -1,5 +1,3 @@
-<footer class="content-info">
-  <div class="container-fluid">
+<footer class="content-info position--fixed container-fluid">
     <?php dynamic_sidebar('sidebar-footer'); ?>
-  </div>
 </footer>

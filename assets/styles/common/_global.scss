@@ -22,3 +22,26 @@ body {
 		align-items: stretch;
 	}
 }
+
+
+.position--fixed {
+	@include media-breakpoint-up(md) {
+		position: fixed!important;
+	}
+}
+
+.position--absolute {
+	position: absolute!important;
+}
+
+.position--relative {
+	position: relative!important;
+}
+
+
+.content .main {
+	padding-left: 2rem;
+	padding-right: 2rem;
+	padding-bottom: 3rem;
+}
+
