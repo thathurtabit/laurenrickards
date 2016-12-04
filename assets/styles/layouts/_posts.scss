@@ -1,12 +1,13 @@
 .posts-wrapper {
-	display: flex;
-	flex-direction: row;
+  display: flex;
+  flex-direction: row;
 
 	article {
-		position: relative;
+    transition: transform 0.25s ease-in-out;
+    align-content: stretch;
 		display: flex;
-		align-content: stretch;
 		margin-bottom: 30px;
+    position: relative;
 
 		@for $i from 1 through 50 {
 			&:nth-child(#{$i}) a {
@@ -34,7 +35,7 @@
 		h2 {
 			transition: all 0.25s ease-in-out;
 			transform: translateY(2px);
-			text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+			text-shadow: 0 1px 1px rgba(0, 0, 0, .1);
 			opacity: 0;
 			font-size: 1.5rem;
 			color: $white;
@@ -62,7 +63,7 @@
 			}
 
 			img {
-				opacity: 0.1;
+				opacity: .1;
 			}
 		}
 	}
@@ -83,4 +84,12 @@
 
 .comments {
 	max-width: 50rem;
+}
+
+
+.page-header {
+  min-height: 300px;
+  display: flex;
+  flex: 0 0 100%;
+  max-width: 100%;
 }

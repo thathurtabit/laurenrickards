@@ -19,6 +19,20 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
+
+        // When the document is ready, remove preloader
+        $(document).ready(function($) {
+
+          $('body').addClass('pageloaded');
+
+          // site preloader -- also uncomment the div in the header and the css style for #preloader
+          $(window).load(function(){
+            $('#spinner-wrapper').fadeOut(1000,function(){$(this).remove();});
+          });
+
+        });
+
+
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired

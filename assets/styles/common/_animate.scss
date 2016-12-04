@@ -1,0 +1,30 @@
+// INDEX OF ANIMATIONS
+// This is a port of Den Eden's Animate.css, converted for SASS.
+// Source: https://daneden.me/animate/
+//
+// @import this index into your project.
+// Comment out categories below to remove them from your project.
+// Or, @import specific partials (e.g. @import "../../bower_components/animatewithsass/_attention/_bounce";
+//
+//-----------------------------------------------------------------------
+
+// Always required
+@import
+  "../../bower_components/animatewithsass/properties";
+
+// Import the animations
+@import
+  "../../bower_components/animatewithsass/_attention-seekers/attention-seekers",
+  "../../bower_components/animatewithsass/_bouncing-entrances/bouncing-entrances",
+  "../../bower_components/animatewithsass/_bouncing-exits/bouncing-exits",
+  "../../bower_components/animatewithsass/_fading-entrances/fading-entrances",
+  "../../bower_components/animatewithsass/_fading-exits/fading-exits",
+  "../../bower_components/animatewithsass/_flippers/flippers",
+  "../../bower_components/animatewithsass/_lightspeed/lightspeed",
+  "../../bower_components/animatewithsass/_rotating-entrances/rotating-entrances",
+  "../../bower_components/animatewithsass/_rotating-exits/rotating-exits",
+  "../../bower_components/animatewithsass/_sliding-entrances/sliding-entrances",
+  "../../bower_components/animatewithsass/_sliding-exits/sliding-exits",
+  "../../bower_components/animatewithsass/_specials/specials",
+  "../../bower_components/animatewithsass/_zooming-entrances/zooming-entrances",
+  "../../bower_components/animatewithsass/_zooming-exits/zooming-exits";

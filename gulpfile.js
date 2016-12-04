@@ -16,7 +16,9 @@ var cssNano      = require('gulp-cssnano');
 var plumber      = require('gulp-plumber');
 var rev          = require('gulp-rev');
 var runSequence  = require('run-sequence');
+var cache        = require('gulp-cached');
 var sass         = require('gulp-sass');
+var scsslint     = require('gulp-scss-lint');
 var sourcemaps   = require('gulp-sourcemaps');
 var uglify       = require('gulp-uglify');
 
@@ -232,6 +234,15 @@ gulp.task('jshint', function() {
     .pipe(gulpif(enabled.failJSHint, jshint.reporter('fail')));
 });
 
+// https://www.npmjs.com/package/gulp-scss-lint
+gulp.task('scss-lint', function() {
+  return gulp.src([path.source + 'styles/**/*.scss', '!' + path.source + 'styles/common/_animate.scss'])
+    .pipe(cache('scsslint'))
+    .pipe(scsslint({
+      'maxBuffer': 587200
+    }));
+});
+
 // ### Clean
 // `gulp clean` - Deletes the build folder entirely.
 gulp.task('clean', require('del').bind(null, [path.dist]));
@@ -252,6 +263,7 @@ gulp.task('watch', function() {
     }
   });
   gulp.watch([path.source + 'styles/**/*'], ['styles']);
+  gulp.watch([path.source + 'styles/**/*'], ['scss-lint']);
   gulp.watch([path.source + 'scripts/**/*'], ['jshint', 'scripts']);
   gulp.watch([path.source + 'fonts/**/*'], ['fonts']);
   gulp.watch([path.source + 'images/**/*'], ['images']);

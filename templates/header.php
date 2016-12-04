@@ -1,5 +1,5 @@
-<header class="banner no-side-padding full-height col-md-2">
-  <div class="position--fixed col-md-2">
+<header class="banner no-side-padding full-height">
+  <div class="position--fixed main-nav">
     <a class="brand" href="<?= esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
     <nav class="nav-primary">
       <?php

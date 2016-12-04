@@ -19,9 +19,17 @@ use Roots\Sage\Wrapper;
         do_action('get_header');
         get_template_part('templates/header');
       ?>
-      <div class="wrap no-side-padding no-side-margin container-fluid col-md-10" role="document">
+      <div class="wrap no-side-padding no-side-margin container-fluid" role="document">
         <div class="content">
+          <div id="spinner-wrapper">
+            <div class="spinners">
+              <div class="spinner1"></div>
+              <div class="spinner2"></div>
+              <div class="spinner3"></div>
+            </div>
+          </div>
           <main class="main">
+            
             <?php include Wrapper\template_path(); ?>
           </main><!-- /.main -->
         </div><!-- /.content -->
