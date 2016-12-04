@@ -1,7 +1,3 @@
-<?php if ( function_exists('yoast_breadcrumb') ) {
-  yoast_breadcrumb('<div id="breadcrumbs">','</div>');
-} ?>
-
 <?php while (have_posts()) : the_post(); ?>
   <article <?php post_class(); ?>>
 

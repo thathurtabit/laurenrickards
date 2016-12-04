@@ -3,13 +3,24 @@
   flex-direction: row;
 
 	article {
-    transition: transform 0.25s ease-in-out;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
     align-content: stretch;
 		display: flex;
 		margin-bottom: 30px;
     position: relative;
+    opacity: 0;
+    transform: translateY(5px);
 
 		@for $i from 1 through 50 {
+
+      .pageloaded & {
+        &:nth-child(#{$i}) {
+          opacity: 1;
+          transform: translateY(0);
+          transition-delay: (0.075s * $i);
+        }
+      }
+
 			&:nth-child(#{$i}) a {
 	  			background: hsla(random(365), 90, 50, 1);
 	  		}
@@ -88,8 +99,20 @@
 
 
 .page-header {
-  min-height: 300px;
+  transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
+  opacity: 0;
+  transform: translateY(5px);
+  min-height: 250px;
+  align-items: center;
   display: flex;
   flex: 0 0 100%;
   max-width: 100%;
+
+
+  // PAGED LOADED ANIMATION
+  .pageloaded & {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 1s;
+  }
 }
