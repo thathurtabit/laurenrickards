@@ -26,7 +26,7 @@
 	flex: 0 0 100%;
 	width: 100%;
 	overflow: hidden;
-
+	position: relative;
 }
 
 nav .nav {
@@ -116,23 +116,23 @@ nav .nav {
 		position: absolute;
 		width: 8px;
 		height: 10px;
-		top: 60px;
+		top: 40px;
 		border-radius: 100%;
 		background-color: $text-color;
 	}
 
 	.eye-l {
-		left: 50px;
+		left: 30px;
 	}
 
 	.eye-r {
-		right: 50px;
+		right: 30px;
 	}
 
 	.mouth {
 		position: absolute;
 		left: 50%;
-		top: 20%;
+		top: 50px;
 		margin-left: -10px;
 		border-radius: 100%;
 		width: 20px;
