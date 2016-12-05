@@ -25,6 +25,7 @@
 	display: flex;
 	flex: 0 0 100%;
 	width: 100%;
+	overflow: hidden;
 
 }
 
@@ -35,5 +36,107 @@ nav .nav {
 		display: block;
 		padding-top: 10px;
 		padding-bottom: 10px;
+	}
+}
+
+
+.site-name {
+	transition: transform 0.2s;
+	position: relative;
+	transform: translateY(200px);
+	background: $white;
+	margin-left: 20px;
+	margin-right: 20px;
+	padding: 10px;
+	font-size: 0.75rem;
+
+	span {
+		color: lighten($text-color, 30%);
+		display: block;
+		font-size: 0.4rem;
+	}
+
+	.brand:hover & {
+		transform: translateY(60px);
+	}
+
+	&::before,
+	&::after {
+		content: "";
+		top: 100%;
+		position: absolute;
+		width: 6px;
+		height: 100px;
+		background: $white;
+		border-left: 1px solid darken($border-color, 20%);
+		border-right: 1px solid darken($border-color, 20%);
+	}
+
+	&::before {
+		left: 10px;
+	}
+
+	&:after {
+		right: 10px;
+	}
+}
+
+.hand-left,
+.hand-right {
+	position: absolute;
+	top: 50%;
+	height: 20px;
+	margin-top: -10px;
+	left: -5px;
+
+	.finger {
+		display: block;
+		border-radius: 10px;
+		width: 11px;
+		height: 5px;
+		background: $white;
+		border: 1px solid darken($border-color, 35%);
+	}
+}
+
+.hand-right {
+	left: auto;
+	right: -5px;
+}
+
+.face {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	.eye-l,
+	.eye-r {
+		position: absolute;
+		width: 8px;
+		height: 10px;
+		top: 60px;
+		border-radius: 100%;
+		background-color: $text-color;
+	}
+
+	.eye-l {
+		left: 50px;
+	}
+
+	.eye-r {
+		right: 50px;
+	}
+
+	.mouth {
+		position: absolute;
+		left: 50%;
+		top: 20%;
+		margin-left: -10px;
+		border-radius: 100%;
+		width: 20px;
+		height: 10px;
+		border-bottom: 1px solid $text-color;
 	}
 }

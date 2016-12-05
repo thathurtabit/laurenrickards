@@ -9,9 +9,14 @@ function title() {
   if (is_home()) {
     if (get_option('page_for_posts', true)) {
       return get_the_title(get_option('page_for_posts', true));
-    } else {
-      return __('Hi! I\'m Lauren.', 'sage');
-    }
+    } else { 
+
+$post_id = 9; ?>
+
+    <span class="first-line"><?php if( get_field('first-line', $post_id)): the_field('first-line', $post_id); endif; ?></span>
+      <span class="second-line"><?php if( get_field('second-line', $post_id)): the_field('second-line', $post_id);  endif; ?></span>
+      
+    <?php }
   } elseif (is_archive()) {
     return get_the_archive_title();
   } elseif (is_search()) {

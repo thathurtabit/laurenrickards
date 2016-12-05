@@ -1,13 +1,17 @@
 // Grid settings
 $enable-flex:           true;
 $enable-transitions:	true;
-$main-sm-columns:       12;
+$main-sm-columns:       24;
+$main-md-columns:       24 !default;
 $sidebar-sm-columns:    4;
 
 // Colors
-$brand-primary:         #000;
+$brand-primary:         #666;
+$brand-yellow:			#f2cc0d;
 
+$black:					#000;
 $white:					#fff;
+$text-color:			#444;
 
 
 // Typography
@@ -21,3 +25,5 @@ $font-family-base:       $font-family-sans-serif !default;
 
 // Pixel value used to responsively scale all typography. Applied to the `<html>` element.
 $font-size-root: 16px !default;
+
+$border-color:			#eee;

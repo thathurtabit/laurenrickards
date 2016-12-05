@@ -80,6 +80,23 @@
 	}
 }
 
+
+// SINGLE PAGE LOADED TRANSITION
+.single article .row,
+.page article .row {
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  opacity: 0;
+  transform: translateY(5px);
+}
+
+.pageloaded.single article .row,
+.pageloaded.page article .row {
+  transition-delay: 1.3s;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
 .single-post-text {
 	order: 1;
 
@@ -98,7 +115,8 @@
 }
 
 
-.page-header {
+.page-header,
+article header {
   transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
   opacity: 0;
   transform: translateY(5px);
@@ -107,6 +125,7 @@
   display: flex;
   flex: 0 0 100%;
   max-width: 100%;
+  font-family: $font-family-serif;
 
 
   // PAGED LOADED ANIMATION
@@ -115,4 +134,10 @@
     opacity: 1;
     transition-delay: 1s;
   }
+}
+
+
+.single-post article header,
+.page .page-header {
+  min-height: 210px;
 }

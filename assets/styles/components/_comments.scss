@@ -17,3 +17,10 @@
   @extend .btn;
   @extend .btn-secondary;
 }
+
+
+#comments {
+	margin-top: 5rem;
+	padding-top: 4rem;
+	border-top: 1px solid $border-color;
+}

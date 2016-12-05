@@ -1,5 +1,13 @@
 // PRELOADER
 
+a:link, a:active, a:hover, a:visited {
+	text-decoration: none;
+}
+
+body {
+	color: $text-color;
+}
+
 .content {
 	position: relative;
 }
@@ -46,17 +54,18 @@
 
 
 #breadcrumbs {
-	font-size: 0.8rem;
+	font-size: .6rem;
 	height: 20px;
 	line-height: 20px;
 	text-transform: uppercase;
+	letter-spacing: 2px;
 }
 
 
-.main {
+.content .main {
 	position: relative;
-	padding-left: 4rem;
-	padding-right: 4rem;
+	padding-left: 3rem;
+	padding-right: 3rem;
 	padding-bottom: 3rem;
 }
 
