@@ -1,7 +1,7 @@
 <?php
 
 use Roots\Sage\Setup;
-//use Roots\Sage\Wrapper;
+use Roots\Sage\Wrapper;
 
 ?>
 
@@ -34,8 +34,10 @@ use Roots\Sage\Setup;
             yoast_breadcrumb('<div id="breadcrumbs">','</div>');
             } ?>
 
-            <?php include( TEMPLATEPATH . '/templates/page-header.php' ); ?>
-            <?php include( TEMPLATEPATH . '/templates/homeall.php' ); ?>
+            <?php // include Wrapper\template_path(); ?>
+
+            <?php  include( TEMPLATEPATH . '/templates/page-header.php' ); ?>
+            <?php  include( TEMPLATEPATH . '/templates/homeall.php' ); ?>
             <?php //get_template_part('templates/page', 'header'); ?>
             <?php // get_template_part('templates/homeall'); ?>
             

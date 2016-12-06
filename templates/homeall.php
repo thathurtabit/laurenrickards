@@ -48,23 +48,11 @@
 
 	<?php endwhile; ?>
 
+</div>
+
 	
 
-	<?php if ($wp_query->max_num_pages > 1) { // check if the max number of pages is greater than 1  ?>
-	  <nav class="prev-next-wrap row">
-	    <div class="next-posts-link">
-	      <?php next_posts_link('Next'); ?>
-	    </div>
-	    <div class="prev-posts-link">
-	      <?php previous_posts_link('Prev'); ?>
-	    </div>
-	  </nav>
-	<?php } ?>
-
-<?php
-$wp_query = null;
-$wp_query = $temp;
-wp_reset_query(); ?>
+<?php the_posts_navigation(); ?>
 
 
 	<?php else: ?>
