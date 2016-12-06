@@ -28,3 +28,41 @@
   "../../bower_components/animatewithsass/_specials/specials",
   "../../bower_components/animatewithsass/_zooming-entrances/zooming-entrances",
   "../../bower_components/animatewithsass/_zooming-exits/zooming-exits";
+
+
+
+
+  // MY CUSTOM ANIMATIONS
+
+@mixin eye-blink() {
+  animation: eye-blink 8s infinite;
+}
+
+@keyframes eye-blink {
+  0%, 87%, 92%, 95%, 100% {
+    height: 10px;
+  }
+  90%, 93% {
+    height: 1px;
+  }
+}
+
+
+@mixin yawn() {
+  animation: yawn 15s infinite;
+}
+
+@keyframes yawn {
+  0%, 88%, 92% {
+    background-color: transparent;
+    width: 20px;
+    height: 10px;
+    margin-left: -10px;
+  }
+   90% {
+    width: 10px;
+    height: 15px;
+    margin-left: -5px;
+    background-color: $text-color;
+  }
+}
