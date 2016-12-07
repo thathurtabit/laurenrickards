@@ -6,11 +6,15 @@ a:link, a:active, a:hover, a:visited {
 
 body {
 	color: $text-color;
+	font-weight: 200;
 }
 
 .content {
 	position: relative;
 }
+
+// Overriding .tag classes from Bootstrap
+
 
 #spinner-wrapper {
 	position: absolute;
@@ -114,7 +118,7 @@ body {
 }
 
 .wrap {
-	background: darken($white, 3%);
+	background: $bg-grey;
 	
 	@include media-breakpoint-up(md) {
 		flex: 1;

@@ -8,7 +8,7 @@ use Roots\Sage\Wrapper;
 <!doctype html>
 <html <?php language_attributes(); ?>>
   <?php get_template_part('templates/head'); ?>
-  <body <?php body_class('container-fluid'); ?>>
+  <body <?php if(!is_tag()) { body_class('container-fluid'); } else { ?>class="container-fluid"<?php } ?>>
     <div class="row full-height">
       <!--[if IE]>
         <div class="alert alert-warning">

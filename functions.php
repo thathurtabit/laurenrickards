@@ -9,6 +9,8 @@
  *
  * @link https://github.com/roots/sage/pull/1042
  */
+ 
+
 $sage_includes = [
   'lib/assets.php',    // Scripts and stylesheets
   'lib/extras.php',    // Custom functions
@@ -26,3 +28,16 @@ foreach ($sage_includes as $file) {
   require_once $filepath;
 }
 unset($file, $filepath);
+
+
+
+// Make sure Custom Post Types turn up in Archives
+// https://css-tricks.com/snippets/wordpress/make-archives-php-include-custom-post-types/#comment-315155
+function custom_post_archive($query) {
+if(!is_admin()) {
+if (!is_post_type_archive() && $query->is_archive())
+  $query->set( 'post_type', array('artblog', 'nav_menu_item', 'post') );
+    remove_action( 'pre_get_posts', 'custom_post_archive' );
+    }
+}
+add_action('pre_get_posts', 'custom_post_archive');

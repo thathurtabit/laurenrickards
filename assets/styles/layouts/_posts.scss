@@ -147,7 +147,11 @@ article.gallery-post header {
   display: flex;
   flex: 0 0 100%;
   max-width: 100%;
-  font-family: $font-family-serif;
+
+  h1,
+  h2 {
+    font-family: $font-family-serif;
+  }
 
 
   // PAGED LOADED ANIMATION
@@ -174,6 +178,7 @@ article.gallery-post header {
 
 
 .single-post article header,
+.single-artblog article header,
 .page .page-header {
   min-height: 210px;
 }

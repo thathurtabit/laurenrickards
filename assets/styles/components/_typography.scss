@@ -1,0 +1,92 @@
+.single-artblog article,
+.single-post article,
+.page:not(.home) article {
+
+	.single-post-text {
+		padding-right: 40px;
+	}
+
+	img {
+		background-color: $white;
+		padding: 10px;
+	}
+
+	.page-header {
+		flex-direction: column;
+		align-items: flex-start;
+    	justify-content: center;
+	}
+
+	.post-meta {
+		display: block;
+		text-transform: uppercase;
+		font-size: .65rem;
+		letter-spacing: 2px;
+		color: lighten($text-color, 30%);
+		margin-top: 20px;
+	}
+
+	.entry-content {
+
+		// Opening paragraph
+		> p:first-of-type {
+			font-size: 1.5rem;
+    		line-height: 1.4;
+    		position: relative;
+
+    		&::before {
+    			content: "";
+    			width: 20px;
+    			border-top: 1px solid $brand-yellow;
+    			top: -20px;
+    			height: 1px;
+    			position: absolute;
+    		}
+		}
+
+
+	}
+
+}
+
+// Adjust img for Blog and Pages
+.single-artblog article img,
+.page:not(.home) article img {
+	max-width: 250px;
+	margin: 0 -60px 20px 20px;
+}
+
+.single-post article .entry-content {
+	margin-top: 30px;
+}
+
+.post-tags {
+	display: flex;
+
+	i {
+		font-size: .7rem;
+		line-height: 1.5rem;
+		color: $brand-yellow;
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+
+		li {
+			font-size: .7rem;
+			display: inline-block;
+			margin-left: 10px;
+			text-transform: uppercase;
+
+			&:after {
+				content: ",";
+			}
+
+			&:last-of-type::after {
+				content: "";
+			}
+		}
+	}
+}
