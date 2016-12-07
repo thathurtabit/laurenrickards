@@ -56,3 +56,11 @@ function asset_path($filename) {
     return $dist_path . $directory . $file;
   }
 }
+
+// Check for Custom Post Types
+// http://wordpress.stackexchange.com/questions/6731/if-is-custom-post-type
+function is_post_type($type){
+    global $wp_query;
+    if($type == get_post_type($wp_query->post->ID)) return true;
+    return false;
+}

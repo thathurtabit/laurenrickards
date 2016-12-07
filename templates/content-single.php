@@ -1,7 +1,7 @@
 <?php while (have_posts()) : the_post(); ?>
   <article <?php post_class(); ?>>
 
-    <header>
+        <header class="page-header">
           <h1 class="entry-title"><?php the_title(); ?></h1>
         </header>
 
@@ -35,24 +35,20 @@
 
       </div><!-- / col -->
 
-      <div class="col-md-5">
 
-        <?php
+      <?php
         // check if the post has a Post Thumbnail assigned to it.
         if ( has_post_thumbnail() ) { ?>
 
+        <div class="col-md-5">
+        
         <a href="<?php the_post_thumbnail_url('full'); ?>" target="_blank" title="See full image.">
           <?php the_post_thumbnail('single-page-img'); ?>
         </a>
-       
-        <?php } 
+      
+        </div><!-- / col -->
 
-        else {
-          echo "No image yet :(";
-        }
-        ?>
-
-      </div><!-- / col -->
+      <?php } ?>
 
     </div><!-- / row -->
 

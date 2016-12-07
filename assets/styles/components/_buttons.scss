@@ -1,0 +1,10 @@
+.btn-more {
+	transition: background-color 0.25s ease-in-out;
+	background: $white;
+	padding: 5px 10px;
+	color: $text-color !important;
+    text-transform: uppercase;
+    font-size: .5rem!important;
+    letter-spacing: 3px;
+    display: inline-block;
+}

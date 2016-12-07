@@ -1,4 +1,4 @@
-<div class="posts-wrapper">
+<div class="posts-wrapper row">
 <?php 
 
 	// Get current page and append to custom query parameters array
@@ -12,8 +12,8 @@
 	// https://www.binarymoon.co.uk/2010/03/5-wordpress-queryposts-tips/
 	$query = array(
 		'paged' => $paged,
-		'posts_per_page' => 4,
-		'post_type' => array('post', 'blog')
+		'posts_per_page' => 20,
+		'post_type' => array('post', 'artblog')
 	);
 
 	$temp = $wp_query;
@@ -26,25 +26,8 @@
 	// While loop
 	if ( $wp_query->have_posts() ) : while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
 
-		<article <?php post_class('col-md-2'); ?>>
-		<a href="<?php the_permalink(); ?>">
-		  <header>
-		    <h2 class="entry-title"><?php the_title(); ?></h2>
-		  </header>
-
-			<?php
-			// check if the post has a Post Thumbnail assigned to it.
-			if ( has_post_thumbnail() ) {
-				the_post_thumbnail('thumbnail');
-			} 
-
-			else {
-				echo "No image yet :(";
-			}
-			?>
-		</a>
-	</article>
-
+		<?php  include( TEMPLATEPATH . '/templates/content.php' ); ?>
+		
 
 	<?php endwhile; ?>
 
