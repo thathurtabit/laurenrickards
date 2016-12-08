@@ -2,7 +2,15 @@
   <article <?php post_class(); ?>>
 
         <header class="page-header">
-          <h1 class="entry-title"><?php the_title(); ?></h1>
+          <h1 class="entry-title"><?php the_title(); ?>
+            <!-- If this item is for sale, then show the button -->
+            <?php if( get_field('buy_url') ): ?>  
+              <a href="<?php the_field('buy_url'); ?>" class="btn-buy" target="_blank" title="Buy this item.">Buy</a>            
+            <?php endif; ?>
+            <!-- / End sale button -->
+          </h1>
+
+          
 
           <?php if('artblog' == get_post_type($wp_query->post->ID)) { ?>
             <div class="post-meta">
@@ -28,11 +36,17 @@
 
     <div class="row">
 
-      <div class="<?php if('artblog' == get_post_type($wp_query->post->ID)) { ?>col-md-5<?php } else { ?>col-md-4<?php } ?> single-post-text">
+      <div class="<?php if('artblog' == get_post_type($wp_query->post->ID)) { ?>col-lg-5<?php } else { ?>col-lg-4<?php } ?> single-post-text">
 
         <div class="entry-content">
           <?php the_content(); ?>
         </div>
+
+        <!-- If this item is for sale, then show the button -->
+            <?php if( get_field('buy_url') ): ?>  
+              <a href="<?php the_field('buy_url'); ?>" class="btn-buy" target="_blank" title="Buy this item.">Buy</a>            
+            <?php endif; ?>
+            <!-- / End sale button -->
 
 
 
@@ -66,7 +80,7 @@
         // check if the post has a Post Thumbnail assigned to it.
         if ( has_post_thumbnail() ) { ?>
 
-        <div class="col-md-5">
+        <div class="col-lg-5">
 
           
          

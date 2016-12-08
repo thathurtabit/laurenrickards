@@ -28,6 +28,24 @@
 
 	.entry-content {
 
+		ul {
+			margin-top: 30px;
+			padding: 0 0 0 10px;
+
+			li {
+				list-style-type: none;
+				position: relative;
+				padding-left: 20px;
+
+				&::before {
+					content: "\2605";
+					color: $brand-yellow;
+					position: absolute;
+    				left: 0;
+				}
+			}
+		}
+
 		// Opening paragraph
 		> p:first-of-type {
 			font-size: 1.5rem;
@@ -45,6 +63,25 @@
 		}
 
 
+	}
+
+
+	blockquote {
+		padding: 20px 20px 10px 50px;
+		border-left: 3px solid $brand-yellow;
+		position: relative;
+		background-color: lighten($bg-grey, 1%);
+		margin-bottom: 30px;
+
+		&::before {
+	        content: '\201C';
+	        font-family: $font-family-sans-serif;
+	        position: absolute;
+	        left: 12px;
+    		top: 0;
+	        font-size: 65px;
+	        color: $brand-yellow;
+		}
 	}
 
 }
@@ -90,3 +127,5 @@
 		}
 	}
 }
+
+

@@ -66,3 +66,42 @@
     background-color: $text-color;
   }
 }
+
+
+
+// FLIP SPIN X + BG COLOUR
+@mixin change-bg-color() {
+  animation-name: change-bg-color;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  transform-origin: 50% 50%;
+}
+
+// Animate=spin spin keyframes
+@keyframes change-bg-color {
+      0% {
+        transform: rotateX(0deg);
+          background-color: $brand-yellow;
+      }
+      16% {
+          background-color: $brand-purple;
+      }
+      32% {
+          background-color: $brand-orange;
+      }
+      48% {
+          background-color: $brand-pink;
+      }
+      64% {
+          background-color: $brand-blue;
+      }
+      80% {
+          background-color: $brand-red;
+      }
+      100% {
+          background-color:$brand-green;
+          transform: rotateX(180deg)
+      }
+}
+// end FLIP SPIN X + BG COLOUR

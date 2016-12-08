@@ -1,7 +1,7 @@
 // INTRO STYLES
 
 .page-header .first-line strong {
-	@include flipInX();
+	@include change-bg-color();
 	animation-delay: 2s;
 	background-color: $brand-yellow;
 	color: $white;

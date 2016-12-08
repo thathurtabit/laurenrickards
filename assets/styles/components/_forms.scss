@@ -6,10 +6,52 @@
   font-weight: normal;
   @extend .form-group;
 }
-.search-form .search-field {
+.search-form .search-field,
+.wpcf7-form-control {
   @extend .form-control;
 }
-.search-form .search-submit {
+.search-form .search-submit,
+.wpcf7-submit {
   @extend .btn;
   @extend .btn-secondary;
+}
+
+
+
+.form-control {
+	border-radius: 3px;
+	margin-top: 5px;
+}
+
+.wpcf7-form {
+	margin-top: 3rem;
+}
+
+.wpcf7-form label {
+	font-size: 0.8rem;
+	text-transform: uppercase;
+}
+
+.comment-form input {
+	max-width: 25rem!important;
+}
+
+.form-submit {
+	margin-top: 3rem;
+}
+
+.wpcf7-submit,
+.comment-form input[type=submit] {
+	display: inline-block;
+	border: none;
+	background-color: $brand-yellow;
+	color: $white;
+	text-transform: uppercase;
+	width: auto;
+	letter-spacing: 2px;
+
+	&:hover {
+		color: $white;
+		background-color: darken($brand-yellow, 5%);
+	}
 }

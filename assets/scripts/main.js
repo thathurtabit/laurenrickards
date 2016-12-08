@@ -44,6 +44,8 @@
 
         $('.image-slider').slick({
           speed: 500,
+          autoplay: true,
+          autoplaySpeed: 5000,
           infinite: true,
           fade: true,
           cssEase: 'linear'

@@ -22,6 +22,7 @@ body {
 	left: 0;
 	right: 0;
 	bottom: 0;
+	height: 600px;
 	z-index: 10;
 
 	.spinners {
@@ -39,7 +40,7 @@ body {
 			@include bounceIn($count: infinite);
 			border-radius: 100%;
 			display: inline-block;
-			background: $brand-purple;
+			background: $brand-yellow;
 			margin-right: 3px;
 			margin-left: 3px;
 			width: 10px;
@@ -47,10 +48,12 @@ body {
 
     		&.spinner2 {
     			animation-delay: 0.1s;
+    			background: $brand-orange;
     		}
 
     		&.spinner3 {
     			animation-delay: 0.2s;
+    			background: $brand-red;
     		}
 		}
 	}
