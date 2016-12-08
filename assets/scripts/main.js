@@ -32,10 +32,26 @@
 
         });
 
-
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
+      }
+    },
+    // Single pages
+    'single': {
+      init: function() {
+        // JavaScript to be fired on Single pages
+
+        $('.image-slider').slick({
+          speed: 500,
+          infinite: true,
+          fade: true,
+          cssEase: 'linear'
+        });
+
+      },
+      finalize: function() {
+        // JavaScript to be fired on Single pages, after the init JS
       }
     },
     // Home page

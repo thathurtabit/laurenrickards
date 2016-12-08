@@ -1,0 +1,80 @@
+/* Slider */
+
+.slick-slider {
+	max-width: 661px;
+}
+
+.slick-prev,
+.slick-next {
+    position: absolute;
+    display: block;
+    height: 30px;
+    width: 30px;
+    line-height: 0px;
+    font-size: 0px;
+    cursor: pointer;
+    background: transparent;
+    color: transparent;
+    top: 106%;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    padding: 0;
+    border: none;
+    outline: none;
+    z-index: 10;
+    background-color: $white;
+    border-radius: 100%;
+    outline: none;
+
+    &:hover, &:active {
+        outline: none;
+        color: transparent;
+        background-color: $brand-yellow;
+        &:before {
+            opacity: 1;
+            color: $white;
+        }
+    }
+    &.slick-disabled:before {
+        opacity: 0;
+    }
+    &:before {
+        font-family: "FontAwesome";
+        font-size: 15px;
+        display: block;
+        line-height: 1;
+        color: $text-color;
+        opacity: 0.8;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+.slick-prev {
+    left: 42%;
+    [dir="rtl"] & {
+        left: auto;
+        right: 42%;
+    }
+    &:before {
+        content: $fa-var-chevron-left;
+        [dir="rtl"] & {
+            content: $fa-var-chevron-right;
+        }
+    }
+}
+
+.slick-next {
+    right: 42%;
+    [dir="rtl"] & {
+        left: 42%;
+        right: auto;
+    }
+    &:before {
+        content: $fa-var-chevron-right;
+        [dir="rtl"] & {
+            content: $fa-var-chevron-left;
+        }
+    }
+}

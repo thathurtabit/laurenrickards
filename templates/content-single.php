@@ -47,8 +47,15 @@
           
         <?php } ?>
 
+        <div class="nav-links">
+          <div class="nav-previous">
+            <?php previous_post_link('%link'); ?>
+          </div>
+          <div class="nav-next">
+            <?php next_post_link('%link'); ?>
+          </div>
+        </div> <!-- end navigation -->
 
-        <?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>
       </footer>
         
 
@@ -60,11 +67,46 @@
         if ( has_post_thumbnail() ) { ?>
 
         <div class="col-md-5">
+
+          
+         
+          <?php if (kdmfi_has_featured_image( 'featured-image-2') || kdmfi_has_featured_image( 'featured-image-3')) { ?>
+
+              <div class="image-slider">
+                <!-- SLIDE 1 -->
+                <div class="image-slide">
+                  <a href="<?php the_post_thumbnail_url('full'); ?>" target="_blank" title="See full image.">
+                    <?php the_post_thumbnail('single-page-img'); ?>
+                  </a>
+                </div>
+
+                <!-- SLIDE 2 -->
+                <div class="image-slide">
+                  <a href="<?php kdmfi_get_featured_image_src( 'featured-image-2'); ?>" target="_blank" title="See full image.">
+                    <?php kdmfi_the_featured_image( 'featured-image-2', 'single-page-img' );  ?>
+                  </a>
+                </div>
+
+                <!-- SLIDE 3 -->
+                 <div class="image-slide">
+                  <a href="<?php kdmfi_get_featured_image_src( 'featured-image-3'); ?>" target="_blank" title="See full image.">
+                    <?php kdmfi_the_featured_image( 'featured-image-3', 'single-page-img' );  ?>
+                  </a>
+                </div>
+
+              </div>
+
+          <?php } else { ?>
+
+            <!-- JUST A SINGLE IMG -->
+            <a href="<?php the_post_thumbnail_url('full'); ?>" target="_blank" title="See full image.">
+              <?php the_post_thumbnail('single-page-img'); ?>
+            </a>
+
+          <?php } ?>
+
         
-        <a href="<?php the_post_thumbnail_url('full'); ?>" target="_blank" title="See full image.">
-          <?php the_post_thumbnail('single-page-img'); ?>
-        </a>
-      
+             
         </div><!-- / col -->
 
       <?php } ?>

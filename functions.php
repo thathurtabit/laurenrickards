@@ -41,3 +41,34 @@ if (!is_post_type_archive() && $query->is_archive())
     }
 }
 add_action('pre_get_posts', 'custom_post_archive');
+
+
+// Multiple Featured Images
+// https://wordpress.org/plugins/multiple-featured-images/faq/
+
+add_filter( 'kdmfi_featured_images', function( $featured_images ) {
+    $args_1 = array(
+        'id' => 'featured-image-2',
+        'desc' => 'Your description here.',
+        'label_name' => 'Featured Image 2',
+        'label_set' => 'Set featured image 2',
+        'label_remove' => 'Remove featured image 2',
+        'label_use' => 'Set featured image 2',
+        'post_type' => array( 'post' ),
+    );
+
+    $args_2 = array(
+        'id' => 'featured-image-3',
+        'desc' => 'Your description here.',
+        'label_name' => 'Featured Image 3',
+        'label_set' => 'Set featured image 3',
+        'label_remove' => 'Remove featured image 3',
+        'label_use' => 'Set featured image 3',
+        'post_type' => array( 'post' ),
+    );
+
+    $featured_images[] = $args_1;
+    $featured_images[] = $args_2;
+
+    return $featured_images;
+});

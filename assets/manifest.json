@@ -22,6 +22,6 @@
     }
   },
   "config": {
-    "devUrl": "http://laurenrickards.dev"
+    "devUrl": "http://localhost/laurenrickards/"
   }
 }

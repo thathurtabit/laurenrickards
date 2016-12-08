@@ -9,7 +9,8 @@
   "dependencies": {
     "bootstrap": "git://github.com/twbs/bootstrap.git#v4.0.0-alpha.4",
     "animatewithsass": "^3.2.2",
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "slick-carousel": "^1.6.0"
   },
   "overrides": {
     "font-awesome": {

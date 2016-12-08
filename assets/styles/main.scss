@@ -5,12 +5,14 @@
 @import "../../bower_components/bootstrap/scss/bootstrap.scss";
 @import "../../bower_components/animatewithsass/animate.scss";
 @import "../../bower_components/font-awesome/scss/font-awesome.scss";
+@import "../../bower_components/slick-carousel/slick/slick.scss";
 // endbower
 
 @import "common/animate";
 @import "common/global";
 @import "common/mixins";
 @import "components/buttons";
+@import "components/slick";
 @import "components/typography";
 @import "components/comments";
 @import "components/forms";
