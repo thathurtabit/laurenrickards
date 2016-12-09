@@ -29,7 +29,7 @@ add_filter( 'get_the_archive_title', 'my_theme_archive_title' );
 function title() {
   if (is_front_page()) {
 
-    $post_id = 9; ?>
+    $post_id = 57; //home page ?>
 
     <span class="first-line"><?php if( get_field('first-line', $post_id)): the_field('first-line', $post_id); endif; ?></span>
       <span class="second-line"><?php if( get_field('second-line', $post_id)): the_field('second-line', $post_id);  endif; ?></span>

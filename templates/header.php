@@ -20,12 +20,21 @@
         <div class="mouth"></div>
       </div>
     </a>
-    <nav class="nav-primary">
-      <?php
-      if (has_nav_menu('primary_navigation')) :
-        wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']);
-      endif;
-      ?>
+    <nav class="navbar navbar-light">
+       <button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse" data-target="#CollapsingNavbar" aria-controls="CollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+       <!-- COLLAPSING -->
+       <div class="collapse navbar-toggleable-sm" id="CollapsingNavbar">
+        <?php
+        if (has_nav_menu('primary_navigation')) :
+          wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav navbar-nav']);
+        endif;
+        ?>
+      </div>
+      <!-- / COLLAPSING -->
     </nav>
   </div>
 </header>

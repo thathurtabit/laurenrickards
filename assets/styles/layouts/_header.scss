@@ -15,6 +15,8 @@
 
 
 .banner {
+	width: 100%;
+
 	@include media-breakpoint-up(md) {		
 		background: url(../images/watercolor1.jpg) no-repeat 138% 122%;
 	}
@@ -28,6 +30,48 @@
 		background-color: $brand-yellow !important;
 		color: $white;
 	}
+}
+
+.navbar-toggler {
+	position: absolute;
+    top: 40px;
+    right: 30px;
+    height: 37px;
+    outline: none;
+
+    &:active {
+    	outline: none;
+    }
+
+    span {
+    	transition: all 0.25s ease-in-out;
+    	background-color: $brand-orange;
+    	height: 3px;
+    	width: 25px;
+    	border-radius: 2px;
+    	display: block;
+    	margin-bottom: 5px;
+
+    	&:nth-child(1) {
+    		transform: rotate(45deg) translate(6px, 4px);
+    	}
+
+    	&:nth-child(2) {
+    		opacity: 0;
+    	}
+
+    	&:nth-child(3) {
+    		transform: rotate(-45deg) translate(7px, -5px);
+    	}
+    }
+
+    &.collapsed span {
+    	opacity: 1;
+    	transform: rotate(0) translateY(0);
+    	background-color: $brand-yellow;
+    }
+
+
 }
 
 .menu-home a {
@@ -58,7 +102,7 @@
 
 .brand {
 	background: $bg-grey;
-	min-height: 100px;
+	min-height: 80px;
 	justify-content: center;
 	align-items: center;
 	display: flex;
@@ -66,6 +110,10 @@
 	width: 100%;
 	overflow: hidden;
 	position: relative;
+
+	@include media-breakpoint-down(sm) {
+		max-width: 80px;
+	}
 
 	@include media-breakpoint-up(md) {
 		min-height: 150px;
@@ -76,7 +124,12 @@
 	}
 }
 
-nav .nav {
+nav.navbar {
+	padding: 0;
+	position: initial;
+}
+
+nav.navbar .nav {
 	margin-top: 30px;
 
 	li a {
@@ -96,43 +149,48 @@ nav .nav {
 
 
 .site-name {
-	transition: transform 0.2s;
-	position: relative;
-	transform: translateY(200px);
-	background: $white;
-	margin-left: 20px;
-	margin-right: 20px;
-	padding: 10px;
-	font-size: 0.75rem;
+	display: none;
 
-	span {
-		color: lighten($text-color, 30%);
-		display: block;
-		font-size: 0.4rem;
-	}
-
-	.brand:hover & {
-		transform: translateY(60px);
-	}
-
-	&::before,
-	&::after {
-		content: "";
-		top: 100%;
-		position: absolute;
-		width: 6px;
-		height: 100px;
+	// Only show this medium sized and up
+	@include media-breakpoint-up(md) {
+		transition: transform 0.2s;
+		position: relative;
+		transform: translateY(200px);
 		background: $white;
-		border-left: 1px solid darken($border-color, 20%);
-		border-right: 1px solid darken($border-color, 20%);
-	}
+		margin-left: 20px;
+		margin-right: 20px;
+		padding: 10px;
+		font-size: 0.75rem;
 
-	&::before {
-		left: 10px;
-	}
+		span {
+			color: lighten($text-color, 30%);
+			display: block;
+			font-size: 0.4rem;
+		}
 
-	&:after {
-		right: 10px;
+		.brand:hover & {
+			transform: translateY(60px);
+		}
+
+		&::before,
+		&::after {
+			content: "";
+			top: 100%;
+			position: absolute;
+			width: 6px;
+			height: 100px;
+			background: $white;
+			border-left: 1px solid darken($border-color, 20%);
+			border-right: 1px solid darken($border-color, 20%);
+		}
+
+		&::before {
+			left: 10px;
+		}
+
+		&:after {
+			right: 10px;
+		}
 	}
 }
 
@@ -183,27 +241,43 @@ nav .nav {
 		position: absolute;
 		width: 8px;
 		height: 10px;
-		top: 40px;
+		top: 20px;
 		border-radius: 100%;
+
+		@include media-breakpoint-up(md) {
+			top: 40px;
+		}
 	}
 
 	.eye-l {
-		left: 30px;
+		left: 18px;
+		
+		@include media-breakpoint-up(md) {
+			left: 30px;
+		}
 	}
 
 	.eye-r {
-		right: 30px;
+		right: 18px;
+
+		@include media-breakpoint-up(md) {
+			right: 30px;
+		}
 	}
 
 	.mouth {
 		@include yawn();
 		position: absolute;
 		left: 50%;
-		top: 50px;
+		top: 33px;
 		margin-left: -10px;
 		border-radius: 100%;
 		width: 20px;
 		height: 10px;
 		border-bottom: 1px solid $text-color;
+
+		@include media-breakpoint-up(md) {
+			top: 50px;
+		}
 	}
 }
