@@ -1,13 +1,16 @@
 // INTRO STYLES
 
 .page-header .first-line strong {
-	@include change-bg-color();
-	animation-delay: 2s;
+	transition: background-color 0.25s ease-in-out;
 	background-color: $brand-yellow;
 	color: $white;
 	padding: 25px;
 	font-family: $font-family-serif;
 	border-radius: 100%;
+
+	&:hover {
+		@include change-bg-color();
+	}
 }
 
 .page-header .first-line,

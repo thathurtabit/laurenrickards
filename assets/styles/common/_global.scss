@@ -66,14 +66,48 @@ body {
 	line-height: 20px;
 	text-transform: uppercase;
 	letter-spacing: 2px;
+	position: relative;
+    top: 20px;
+    z-index: 1;
+    color: lighten($text-color, 30%);
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	max-width: 275px;
+
+	@include media-breakpoint-up(sm) {
+		max-width: initial;
+	}
+
+    a {
+    	transition: all 0.25s ease-in-out;
+    	padding: 2px 5px;
+    	background: $white;
+    	color: lighten($text-color, 30%);
+
+    	&:hover {
+    		background-color: $brand-yellow;
+    		color: $text-color;
+    	}
+    }
 }
 
 
 .content .main {
 	position: relative;
-	padding-left: 3rem;
-	padding-right: 3rem;
 	padding-bottom: 3rem;
+	padding-left: 20px;
+	padding-right: 20px;
+
+	@include media-breakpoint-up(md) {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+	@include media-breakpoint-up(lg) {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
 }
 
 
@@ -122,6 +156,9 @@ body {
 
 .wrap {
 	background: $bg-grey;
+	background-image: url(../images/watercolor2.jpg);
+	background-position: 120% -64%;
+	background-repeat: no-repeat;
 	
 	@include media-breakpoint-up(md) {
 		flex: 1;

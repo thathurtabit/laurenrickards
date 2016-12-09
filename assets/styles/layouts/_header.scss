@@ -1,11 +1,22 @@
 .banner,
 .banner .main-nav {
-	
-
 	@include media-breakpoint-up(md) {
 		flex: 0 0 100%;
 		width: 100%;
+		max-width: 200px;
+	}
+
+	@include media-breakpoint-up(lg) {
+		flex: 0 0 100%;
+		width: 100%;
 		max-width: 250px;
+	}
+}
+
+
+.banner {
+	@include media-breakpoint-up(md) {		
+		background: url(../images/watercolor1.jpg) no-repeat 138% 122%;
 	}
 }
 
@@ -47,7 +58,7 @@
 
 .brand {
 	background: $bg-grey;
-	min-height: 200px;
+	min-height: 100px;
 	justify-content: center;
 	align-items: center;
 	display: flex;
@@ -55,6 +66,14 @@
 	width: 100%;
 	overflow: hidden;
 	position: relative;
+
+	@include media-breakpoint-up(md) {
+		min-height: 150px;
+	}
+
+	@include media-breakpoint-up(lg) {
+		min-height: 200px;
+	}
 }
 
 nav .nav {

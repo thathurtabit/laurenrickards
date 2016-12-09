@@ -18,12 +18,29 @@
 	}
 
 	.post-meta {
-		display: block;
+		display: flex;
 		text-transform: uppercase;
-		font-size: .65rem;
+		font-size: .6rem;
 		letter-spacing: 2px;
 		color: lighten($text-color, 30%);
 		margin-top: 20px;
+
+		.post-meta-child:nth-child(2) {
+			border-left: 1px dotted darken($border-color, 10%);
+		}
+
+		i.fa {
+			color: $brand-yellow;
+		}
+
+		time {
+			margin-right: 10px;
+		}
+
+		.post-cat {
+			
+			padding-left: 10px;
+		}
 	}
 
 	.entry-content {
@@ -89,8 +106,13 @@
 // Adjust img for Blog and Pages
 .single-artblog article img,
 .page:not(.home) article img {
-	max-width: 250px;
-	margin: 0 -60px 20px 20px;
+	max-width: 150px;
+	vertical-align: text-bottom;
+
+	@include media-breakpoint-up(xl) {
+		max-width: 250px;
+		margin: 0 -60px 20px 20px;
+	}
 }
 
 .single-post article .entry-content {

@@ -48,6 +48,8 @@
           padding-right: 2rem;
           z-index: 1;
           width: 100%;
+          max-height: 107px;
+          overflow: hidden;
         }
 
         // Gallery thumb header
@@ -118,7 +120,11 @@
   opacity: 1;
 }
 
+.gallery-col {
+   margin-bottom: 40px;
+}
 
+// USE FLEX TO REORDER
 .single-post .single-post-text {
 	order: 1;
 
@@ -126,6 +132,26 @@
 		order: 2;
 	}
 }
+
+.single-artblog .artblog-thumb-col {
+  order: 1;
+  margin-bottom: 50px;
+
+  @include media-breakpoint-up(lg) {
+    order: 2;
+    margin-bottom: 0;
+  }
+}
+
+.single-artblog .single-post-text {
+  order: 2;
+
+  @include media-breakpoint-up(xl) {
+    order: 1;
+  }
+}
+
+// END FLEX REORDER
 
 .size-single-page-img {
 	@extend .img-fluid;
@@ -149,6 +175,24 @@ article.gallery-post header {
   h1,
   h2 {
     font-family: $font-family-serif;
+    font-size: 1.75rem;
+
+    @include media-breakpoint-up(sm) {
+      font-size: 2rem;
+    }
+
+    @include media-breakpoint-up(md) {
+      font-size: 2.5rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: 2.75rem;
+    }
+
+    @include media-breakpoint-up(xl) {
+      font-size: 3rem;
+    }
+
   }
 
 
@@ -218,6 +262,7 @@ article.gallery-post header {
   .nav-next {
     display: inline-block;
     margin-right: 10px;
+    max-width: 46%;
 
     a {
       transition: background-color 0.25s ease-in-out;
