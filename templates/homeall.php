@@ -12,7 +12,7 @@
 	// https://www.binarymoon.co.uk/2010/03/5-wordpress-queryposts-tips/
 	$query = array(
 		'paged' => $paged,
-		'posts_per_page' => 20,
+		'posts_per_page' => 30,
 		'post_type' => array('post', 'artblog')
 	);
 
