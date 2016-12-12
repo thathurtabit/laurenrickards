@@ -15,6 +15,8 @@
 		flex-direction: column;
 		align-items: flex-start;
     	justify-content: center;
+    	padding-top: 30px;
+    	padding-bottom: 40px;
 	}
 
 	.post-meta {
@@ -24,23 +26,30 @@
 		letter-spacing: 2px;
 		color: lighten($text-color, 30%);
 		margin-top: 20px;
+		flex-direction: column;
 
-		.post-meta-child:nth-child(2) {
-			border-left: 1px dotted darken($border-color, 10%);
+		@include media-breakpoint-up(md) {
+			flex-direction: row;
+
+			.post-meta-child:nth-child(2) {
+				border-left: 1px dotted darken($border-color, 10%);
+			}
+
+			time {
+				margin-right: 10px;
+			}
+
+			.post-cat {
+				
+				padding-left: 10px;
+			}
 		}
 
 		i.fa {
 			color: $brand-yellow;
 		}
 
-		time {
-			margin-right: 10px;
-		}
 
-		.post-cat {
-			
-			padding-left: 10px;
-		}
 	}
 
 	.entry-content {
@@ -65,9 +74,14 @@
 
 		// Opening paragraph
 		> p:first-of-type {
-			font-size: 1.5rem;
+			font-size: 1.3rem;
     		line-height: 1.4;
     		position: relative;
+
+    		@include media-breakpoint-up(md) {
+				font-size: 1.5rem;
+    			line-height: 1.4;
+    		}
 
     		&::before {
     			content: "";
@@ -106,7 +120,8 @@
 // Adjust img for Blog and Pages
 .single-artblog article img,
 .page:not(.home) article img {
-	max-width: 150px;
+	//max-width: 150px;
+	max-width: 250px;
 	vertical-align: text-bottom;
 
 	@include media-breakpoint-up(xl) {

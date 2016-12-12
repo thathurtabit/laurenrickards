@@ -2,7 +2,7 @@
 
     <div class="row">
 
-      <div class="col-md-4">
+      <div class="col-page-content col-lg-6 col-xl-6 col-xxl-4">
 
         <div class="entry-content">
           <?php the_content(); ?>
@@ -10,7 +10,7 @@
         
       </div><!-- / col -->
 
-      <div class="col-md-2">
+      <div class="col-page-thumb col-lg-6 col-xl-2">
 
         <?php
         // check if the post has a Post Thumbnail assigned to it.

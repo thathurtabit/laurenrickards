@@ -1,7 +1,7 @@
 /* Slider */
 
 .slick-slider {
-	max-width: 300px;
+	max-width: 280px;
 
     // NEED TO STOP OVERPOWERING THE LAYOUT
     @include media-breakpoint-up(sm) {
