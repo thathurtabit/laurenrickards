@@ -4,24 +4,24 @@
 	transition: background-color 0.25s ease-in-out;
 	background-color: $brand-yellow;
 	color: $white;
-	padding: 25px;
+	line-height: 80px;
 	font-family: $font-family-serif;
 	border-radius: 100%;
 	width: 80px;
     height: 80px;
     display: block;
-    margin-right: 20px;
+    text-align: center;
 
 	@include media-breakpoint-up(sm) {
 		width: 90px;
 		height: 90px;
-		margin-right: 20px;
+		line-height: 90px;
 	}
 
 	@include media-breakpoint-up(lg) {
 		width: 100px;
 		height: 100px;
-		margin-right: 25px;
+		line-height: 100px;
 	}
 
 	&:hover {
@@ -53,6 +53,25 @@
 		@include media-breakpoint-up(xl) {
 			font-size: 2.7rem;
 		}
+	}
+}
+
+.page-header .first-line {
+	width: 100px;
+    height: 100px;
+    flex: 0 0 100px;
+    display: block;
+
+    @include media-breakpoint-up(sm) {
+		width: 110px;
+		height: 100px;
+		flex: 0 0 110px;
+	}
+
+	@include media-breakpoint-up(lg) {
+		width: 120px;
+		height: 100px;
+		flex: 0 0 120px;
 	}
 }
 

@@ -72,3 +72,4 @@ add_filter( 'kdmfi_featured_images', function( $featured_images ) {
 
     return $featured_images;
 });
+
