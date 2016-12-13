@@ -52,7 +52,7 @@
 
     span {
     	transition: all 0.25s ease-in-out;
-    	background-color: $brand-green;
+    	background-color: $brand-yellow;
     	height: 3px;
     	width: 25px;
     	border-radius: 2px;
@@ -96,6 +96,7 @@
 	    width: 20px;
 	    text-indent: 0;
 	    margin-left: -10px;
+	    top: 3px;
 	}
 }
 
@@ -119,7 +120,6 @@
 	display: flex;
 	flex: 0 0 100%;
 	width: 100%;
-	overflow: hidden;
 	position: relative;
 
 	@include media-breakpoint-down(sm) {
@@ -128,6 +128,7 @@
 
 	@include media-breakpoint-up(md) {
 		min-height: 150px;
+		overflow: hidden;
 	}
 
 	@include media-breakpoint-up(lg) {
@@ -146,8 +147,8 @@ nav.navbar .nav {
 	li a {
 		transition: all 0.25s ease-in-out;
 		display: block;
-		margin-top: 10px;
-		margin-bottom: 10px;
+		margin-top: 8px;
+		margin-bottom: 8px;
 		padding: 3px 20px;
     	display: inline-block;
 		border-radius: 10px;
@@ -167,8 +168,18 @@ nav.navbar .nav {
 }
 
 .site-name {
-	display: none;
+	position: absolute;
+	left: 69px;
+	font-size: 0.7rem;
+	text-align: left;
+	line-height: 1.2;
 
+	span {
+		color: lighten($text-color, 30%);
+		display: block;
+		font-size: 0.4rem;
+		margin-top: 5px;
+	}
 
 	// Only show this medium sized and up
 	@include media-breakpoint-up(md) {
@@ -181,11 +192,12 @@ nav.navbar .nav {
 		margin-right: 20px;
 		padding: 10px;
 		font-size: 0.75rem;
+		text-align: center;
+		left: auto;
+		line-height: 1.4;
 
 		span {
-			color: lighten($text-color, 30%);
-			display: block;
-			font-size: 0.4rem;
+			margin-top: 0;
 		}
 
 		.brand:hover & {
@@ -222,11 +234,16 @@ nav.navbar .nav {
 
 .hand-left,
 .hand-right {
-	position: absolute;
-	top: 50%;
-	height: 20px;
-	margin-top: -10px;
-	left: -5px;
+	display: none;
+
+	@include media-breakpoint-up(md) {
+		display: block;
+		position: absolute;
+		top: 50%;
+		height: 20px;
+		margin-top: -10px;
+		left: -5px;
+	}
 
 	.finger {
 		display: block;
@@ -261,17 +278,19 @@ nav.navbar .nav {
 	}
 
 	.eye-l,
-	.eye-r {
-		@include eye-blink;
+	.eye-r {		
 		background-color:  $text-color;
 		position: absolute;
 		width: 6px;
-		height: 8px;
+		height: 6px;
 		top: 13px;
 		border-radius: 100%;
+		@include eye-blink-sm;
 
 		@include media-breakpoint-up(md) {
 			top: 40px;
+			height: 8px;
+			@include eye-blink-lg;
 		}
 	}
 
@@ -292,18 +311,19 @@ nav.navbar .nav {
 	}
 
 	.mouth {
-		@include yawn();
 		position: absolute;
 		left: 50%;
-		top: 26px;
+		top: 20px;
 		margin-left: -10px;
 		border-radius: 100%;
 		width: 20px;
 		height: 10px;
 		border-bottom: 1px solid $text-color;
+		@include yawn-sm();
 
 		@include media-breakpoint-up(md) {
 			top: 50px;
+			@include yawn-lg();
 		}
 	}
 }

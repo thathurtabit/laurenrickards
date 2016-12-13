@@ -32,6 +32,10 @@
 	text-transform: uppercase;
 }
 
+.comment-form label {
+	margin-bottom: 0;
+}
+
 .comment-form input {
 	max-width: 25rem!important;
 }

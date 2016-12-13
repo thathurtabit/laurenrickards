@@ -25,3 +25,73 @@
 	padding-top: 4rem;
 	border-top: 1px solid $border-color;
 }
+
+
+#comments h2 {
+  font-size: 1.75rem;
+  margin-bottom: 40px;
+
+  span {
+    border-bottom: 1px dotted $brand-yellow;
+  }
+}
+
+.comment-list li {
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px dotted darken($border-color, 10%);
+
+  // Reply child
+  li {
+    margin-top: 20px;
+  }
+}
+
+.comment-meta {
+  display: flex;
+  font-size: 0.75rem;
+
+  .comment-author {
+    margin: 0;
+    display: flex;
+
+    img {
+      margin: 0 10px 0 0;
+      padding: 5px;
+    }
+
+    span,
+    b {
+      margin-top: 10px;
+      margin-right: 5px;
+    }
+  }
+}
+
+.comment-awaiting-moderation {
+  margin: 10px 5px 0;
+  font-style: italic;
+  color: lighten($text-color, 40%);
+}
+
+.comment-content {
+  margin-top: 20px;
+  padding: 0 20px;
+  border-left: 1px dotted $brand-yellow;
+}
+
+.comment-metadata {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  a {
+    color: lighten($text-color, 40%);
+
+    &:hover {
+      color: $brand-yellow;
+    }
+  }
+}

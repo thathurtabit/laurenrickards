@@ -34,11 +34,25 @@
 
   // MY CUSTOM ANIMATIONS
 
-@mixin eye-blink() {
-  animation: eye-blink 8s infinite;
+@mixin eye-blink-sm() {
+  animation: eye-blink-sm 8s infinite;
 }
 
-@keyframes eye-blink {
+@keyframes eye-blink-sm {
+  0%, 87%, 92%, 95%, 100% {
+    height: 6px;
+  }
+  90%, 93% {
+    height: 1px;
+  }
+}
+
+
+@mixin eye-blink-lg() {
+  animation: eye-blink-lg 8s infinite;
+}
+
+@keyframes eye-blink-lg {
   0%, 87%, 92%, 95%, 100% {
     height: 10px;
   }
@@ -47,12 +61,32 @@
   }
 }
 
-
-@mixin yawn() {
-  animation: yawn 15s infinite;
+@mixin yawn-sm() {
+  animation: yawn-sm 15s infinite;
 }
 
-@keyframes yawn {
+@keyframes yawn-sm {
+  0%, 88%, 92% {
+    background-color: transparent;
+    width: 14px;
+    height: 8px;
+    margin-left: -7px;
+  }
+   90% {
+    width: 8px;
+    height: 12px;
+    margin-left: -4px;
+    background-color: $text-color;
+  }
+}
+
+
+
+@mixin yawn-lg() {
+  animation: yawn-lg 15s infinite;
+}
+
+@keyframes yawn-lg {
   0%, 88%, 92% {
     background-color: transparent;
     width: 20px;
