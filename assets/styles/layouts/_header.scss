@@ -100,6 +100,65 @@
 	}
 }
 
+li.social-link {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	display: inline-block;
+	position: relative;
+
+	a {
+		transition: all 0.25s ease-in-out;
+		text-indent: -9999rem;
+		background-color: transparent;
+		position: relative;
+		padding-left: 15px!important;
+		padding-right: 15px!important;
+		height: 30px;
+
+		&:hover {
+			background-color: transparent!important;
+		}
+	}
+
+	&:hover a::before {
+		color: $white;
+	}
+
+	a::before {
+		transition: all 0.25s ease-in-out;
+		font-family: "FontAwesome";
+		position: absolute;
+		background-color: transparent;
+		left: 0;
+		height: 30px;
+		width: 30px;
+		text-indent: 0;
+		top: 0;
+		z-index: 1;
+		text-align: center;
+		line-height: 30px;
+	}
+
+	&.instagram-icon a::before {
+		content: $fa-var-instagram;
+	}
+
+	&.tumblr-icon a::before {
+		content: $fa-var-tumblr;
+	}
+
+	&.instagram-icon:hover a {
+		background-color: $brand-instagram!important;
+	}
+
+	&.tumblr-icon:hover a {
+		background-color: $brand-tumblr!important;
+	}
+
+
+}
+
+
 .main-nav {
 	padding: 10px;
 	text-align: center;
