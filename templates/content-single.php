@@ -84,7 +84,7 @@
 
           
          
-          <?php if (kdmfi_has_featured_image( 'featured-image-2') || kdmfi_has_featured_image( 'featured-image-3')) { ?>
+          <?php if (kdmfi_has_featured_image( 'featured-image-3')) { ?>
 
               <div class="image-slider">
                 <!-- SLIDE 1 -->
@@ -105,6 +105,26 @@
                  <div class="image-slide">
                   <a href="<?php echo kdmfi_get_featured_image_src( 'featured-image-3'); ?>" target="_blank" title="See full image.">
                     <?php kdmfi_the_featured_image( 'featured-image-3', 'single-page-img' );  ?>
+                  </a>
+                </div>
+
+              </div>
+
+            <?php } else if (kdmfi_has_featured_image( 'featured-image-2')) { ?>
+
+
+            <div class="image-slider">
+                <!-- SLIDE 1 -->
+                <div class="image-slide">
+                  <a href="<?php the_post_thumbnail_url('full'); ?>" target="_blank" title="See full image.">
+                    <?php the_post_thumbnail('single-page-img'); ?>
+                  </a>
+                </div>
+
+                <!-- SLIDE 2 -->
+                <div class="image-slide">
+                  <a href="<?php echo kdmfi_get_featured_image_src( 'featured-image-2'); ?>" target="_blank" title="See full image.">
+                    <?php kdmfi_the_featured_image( 'featured-image-2', 'single-page-img' );  ?>
                   </a>
                 </div>
 
